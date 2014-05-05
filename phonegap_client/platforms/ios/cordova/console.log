@@ -134,3 +134,7 @@
 2014-05-04 16:34:43.978 HelloWorld[8921:90b] Unlimited access to network resources
 2014-05-04 16:34:44.091 HelloWorld[8921:90b] Resetting plugins due to page load.
 2014-05-04 16:34:44.150 HelloWorld[8921:90b] Finished load of: file:///Users/bryan/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/9C919A04-50F1-4C40-AD33-2EEBB8CD967A/HelloWorld.app/www/index.html
+2014-05-04 17:45:01.490 HelloWorld[11471:90b] Multi-tasking -> Device: YES, App: YES
+2014-05-04 17:45:01.519 HelloWorld[11471:90b] Unlimited access to network resources
+2014-05-04 17:45:01.875 HelloWorld[11471:90b] Resetting plugins due to page load.
+2014-05-04 17:45:01.984 HelloWorld[11471:90b] Finished load of: file:///Users/ahuang/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/4DB2E672-D3AF-4A29-BFAC-161AE37C6D1E/HelloWorld.app/www/index.html

@@ -34,7 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         // using my app id and secret as the app access token
-        var ACCESS_TOKEN="201816686511648|a81a89dca729d8c20200ccce83cea4cd";
+        var ACCESS_TOKEN="497175490383456|ecced3cdcaf2c6660c01c58d6194615b";
         var storyTemplate = _.template(document.getElementById("story_template").innerHTML.trim());
         function getGraph(url, data, success) {
             url = "https://graph.facebook.com/v2.0" + url;

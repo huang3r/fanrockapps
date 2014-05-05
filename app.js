@@ -32,7 +32,7 @@ app.configure('production', function(){
 });
 
 // api endpoints
-require('./source/api/preciseinterests')(app);
+require('./source/api/fbgraph')(app);
 
 
 var port = app.get('port');
