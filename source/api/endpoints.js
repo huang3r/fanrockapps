@@ -23,12 +23,13 @@ var fbgraph = function(app) {
 				"startDate" : Date.create('this sunday'),
 				"endDate" : Date.create('this sunday').addDays(-7),
 				"item" : {
-					"img" : "http://something.com/image.jpg",
-					"title" : "item name"
+					"img" : "fanrockapps.s3.amazonaws.com/contest/item-1.png",
+					"title" : "Two Tickets to a Home Game!",
+					'description' : 'June 2nd vs the San Franciso Giants'
 				},
 				"winner" : {
-					"name" : "John Doe",
-					"img" : "http://fb.com/thumbnail.jpg"
+					"name" : "Melody M.",
+					"img" : "fanrockapps.s3.amazonaws.com/contest/winner-1.png"
 				}
 			},
 
@@ -38,12 +39,13 @@ var fbgraph = function(app) {
 				"startDate" : Date.create('last sunday'),
 				"endDate" : Date.create('last sunday').addDays(-7),
 				"item" : {
-					"img" : "http://something.com/image.jpg",
-					"title" : "item name"
+					"img" : "fanrockapps.s3.amazonaws.com/contest/item-2.png",
+					"title" : "Yadier Molina Jersey!",
+					'description' : 'Authentic Yadier Molina Jersey'
 				},
 				"winner" : {
-					"name" : "John Doe",
-					"img" : "http://fb.com/thumbnail.jpg"
+					"name" : "Jillian K.",
+					"img" : "fanrockapps.s3.amazonaws.com/contest/winner-2.png"
 				}
 			}
 		}
@@ -114,7 +116,9 @@ var fbgraph = function(app) {
 				var returnBody = JSON.parse(body);
 				res.json(response.statusCode, returnBody);
 				
-				memjs.set(url, JSON.stringify({'statusCode' : response.statusCode, 'body' : returnBody}));
+				if(response.statusCode == 200){ // Only set cache if we get a succes
+					memjs.set(url, JSON.stringify({'statusCode' : response.statusCode, 'body' : returnBody}));
+				}
 				
 			});
 		}
