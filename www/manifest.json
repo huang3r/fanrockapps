@@ -1,0 +1,16 @@
+{
+  "name" : "Fanrock",
+  "description" : "fanrock.",
+  "version" : "0.1",
+  "manifest_version":2,
+  "app": {
+      "launch": {
+        "local_path": "window.html"
+      }
+    },
+  "permissions": [
+    "http://fanrockapps.herokuapp.com/"
+  ],
+  
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
