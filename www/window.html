@@ -28,8 +28,11 @@
     </head>
     <body>
         <div id="contest">
-            hello world
+            <i class="img"></i>
         </div>
+        <ul class="loader">
+          <li></li><li></li><li></li><li></li><li></li><li></li>
+        </ul>
         <script type="text/html" id="story_template">
             <% if (!!story.picture) { %>
                 <img src="<%= story.picture %>" />
@@ -37,7 +40,6 @@
             <p><%= story.message %></p>
             <hr />
         </script>
-        
 
         <script src="js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/underscore.js" type="text/javascript" charset="utf-8"></script>

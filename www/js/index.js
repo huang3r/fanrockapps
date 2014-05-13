@@ -43,6 +43,7 @@ var app = {
             _.each(data.data, function(story) {
                 $(div).append(storyTemplate({"story":story}));
             });
+            $(".loader").remove();
             $("body").append(div);
         });
     }
