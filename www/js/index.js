@@ -40,6 +40,7 @@ var app = {
         }
         getGraph("/Cardinals/feed").success(function(data, textStatus, jqXHR) {
             var div = document.createElement("div");
+            div.id = "content";
             _.each(data.data, function(story) {
                 $(div).append(storyTemplate({"story":story}));
             });

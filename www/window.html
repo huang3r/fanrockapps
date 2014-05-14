@@ -27,18 +27,23 @@
         <title>St. Louis Fans</title>
     </head>
     <body>
-        <div id="contest">
+        <div id="contest" class="media">
             <i class="img"></i>
+            <div class="bd">
+              <h2>Prize</h2>
+            </div>
         </div>
         <ul class="loader">
           <li></li><li></li><li></li><li></li><li></li><li></li>
         </ul>
         <script type="text/html" id="story_template">
-            <% if (!!story.picture) { %>
-                <img src="<%= story.picture %>" />
+            <% if (!story.story) { /* skip things that are fb-generated stories */ %>
+              <% if (!!story.picture) { %>
+                  <img src="<%= story.picture %>" />
+              <% } %>
+              <p><%= story.message %></p>
+              <hr />
             <% } %>
-            <p><%= story.message %></p>
-            <hr />
         </script>
 
         <script src="js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>

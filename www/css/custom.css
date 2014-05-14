@@ -47,6 +47,13 @@ table {
 	border-spacing: 0;
 }
 
+/*** CUSTOM STYLES ***/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(OpenSans-Regular.ttf) format('truetype');
+}
 
 img {
     max-width:100%;
@@ -54,14 +61,15 @@ img {
 body {
     background-color:#f1f1f1;
     color:#333;
-    padding-top:128px;
+    font-family: 'Open Sans', serif;
+    overflow-y:hidden;
 }
 #contest {
     position:fixed; top:0px; right:0px; left:0px;
     height:128px;
     color:#f1f1f1;
     display:block;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#91162A), color-stop(100%,#6B101F));
+    background-color:#91162A;
 }
 #contest .img {
   background:#fff url('../img/mystery-box.png') no-repeat center center;
@@ -69,7 +77,24 @@ body {
   display:block;
   width:100px; height:100px;
 }
+#content {
+  position:fixed; top:128px; left:0px; right:0px; bottom:0px;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
+.media:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+.media .img {
+  display: block;
+}
+
+.loader:before {
+  content:'Loading...';
+}
 .loader{
 	position: fixed;
 	z-index: 3;
@@ -81,7 +106,6 @@ body {
 	width: 90px;
 	height: 60px;
   list-style: none;
-
 }
 
 @-webkit-keyframes 'loadbars' {
@@ -107,22 +131,10 @@ body {
 		margin-right: 5px;
     box-shadow: 0px 20px 10px rgba(0,0,0,0.2);
 	}
-.loader li:first-child{
-			-webkit-animation: loadbars 1s cubic-bezier(0.645,0.045,0.355,1) infinite 0s;
-		}
-.loader li:nth-child(2){
-			-webkit-animation: loadbars 1s ease-in-out infinite -0.2s;
-		}
-.loader li:nth-child(3){
-			-webkit-animation: loadbars 1s ease-in-out infinite -0.4s;
-  }
-.loader li:nth-child(4){
-			-webkit-animation: loadbars 1s ease-in-out infinite -0.6s;
-    }
-.loader li:nth-child(5){
-			-webkit-animation: loadbars 1s ease-in-out infinite -0.8s;
-    }
-.loader li:nth-child(6){
-			-webkit-animation: loadbars 1s ease-in-out infinite -1.0s;
-    }
+.loader li:first-child{ -webkit-animation: loadbars 1s cubic-bezier(0.645,0.045,0.355,1) infinite 0s; }
+.loader li:nth-child(2){ -webkit-animation: loadbars 1s ease-in-out infinite -0.2s; }
+.loader li:nth-child(3){ -webkit-animation: loadbars 1s ease-in-out infinite -0.4s; }
+.loader li:nth-child(4){ -webkit-animation: loadbars 1s ease-in-out infinite -0.6s; }
+.loader li:nth-child(5){ -webkit-animation: loadbars 1s ease-in-out infinite -0.8s; }
+.loader li:nth-child(6){ -webkit-animation: loadbars 1s ease-in-out infinite -1.0s; }
 }
