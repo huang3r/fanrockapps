@@ -39,13 +39,12 @@ var app = {
             return $.getJSON(url, data, success);
         }
         getGraph("/Cardinals/feed").success(function(data, textStatus, jqXHR) {
-            var div = document.createElement("div");
-            div.id = "content";
+            var table = document.createElement("ul");
+            $(table).addClass("table-view");
             _.each(data.data, function(story) {
-                $(div).append(storyTemplate({"story":story}));
+                $(table).append(storyTemplate({"story":story}));
             });
-            $(".loader").remove();
-            $("body").append(div);
+            $("#content").append(table);
         });
     }
 };
