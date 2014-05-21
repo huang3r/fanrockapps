@@ -24,23 +24,41 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="css/ratchet.min.css" type="text/css" media="screen" title="ratchet" charset="utf-8">
-        <link rel="stylesheet" href="css/ratchet-theme-ios.min.css" type="text/css" media="screen" title="ratchet" charset="utf-8">
-        <!--<link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="custom" charset="utf-8">-->
-        <title>St. Louis Fans</title>
+        <link rel="stylesheet" href="css/ratchet-theme-ios.min.css" type="text/css" media="screen" title="ratchet-ios" charset="utf-8">
+        <style>
+          .thumbnail {
+            width:42px; height:42px;
+            background-size:cover;
+          }
+        </style>        <title>St. Louis Fans</title>
     </head>
     <body>
       <header class="bar bar-nav">
         <h1 class="title">St. Louis Fans</h1>
       </header>
+      <nav class="bar bar-tab">
+        <a class="tab-item active" href="#">
+          <span class="icon icon-list"></span>
+          <span class=tab-label>Newsfeed</span>
+        </a>
+        <a class="tab-item" href="#contest">
+          <span class="icon icon-star"></span>
+          <span class=tab-label>Contest</span>
+        </a>
+        <a class="tab-item" href="#contest">
+          <span class="icon icon-person"></span>
+          <span class=tab-label>Profile</span>
+        </a>
+      </nav>
       <div id="content" class="content"></div>
 
       <script type="text/html" id="story_template">
           <% if (!story.story) { /* skip things that are fb-generated stories */ %>
-            <li class="table-view-cell">
+            <li class="table-view-cell media">
             <% if (!!story.picture) { %>
-                <img src="<%= story.picture %>" />
+                <i class="thumbnail media-object pull-left" style="background-image:url('<%= story.picture %>');"></i>
             <% } %>
-            <p><%= story.message %></p>
+            <div class="media-body"><p><%= story.message %></p></div>
             </li>
           <% } %>
       </script>
